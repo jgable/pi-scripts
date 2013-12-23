@@ -1,0 +1,25 @@
+{
+  "name": "pi-scripts",
+  "version": "0.0.0",
+  "description": "Sample scripts for raspberry pi",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R Spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jgable/pi-scripts.git"
+  },
+  "author": "Jacob Gable",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jgable/pi-scripts/issues"
+  },
+  "dependencies": {
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {
+    "should": "~2.1.1",
+    "sinon": "~1.7.3"
+  }
+}
