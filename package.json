@@ -4,7 +4,7 @@
   "description": "Sample scripts for raspberry pi",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R Spec"
+    "test": "jshint lib/*.js test/*.js && mocha -R Spec"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,8 @@
     "url": "https://github.com/jgable/pi-scripts/issues"
   },
   "dependencies": {
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "bluebird": "~0.11.5-1"
   },
   "devDependencies": {
     "should": "~2.1.1",

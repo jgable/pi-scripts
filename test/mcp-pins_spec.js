@@ -1,3 +1,4 @@
+'use strict';
 
 var sinon = require('sinon'),
 	_ = require('lodash'),
@@ -6,6 +7,8 @@ var sinon = require('sinon'),
 
 
 describe('Pins', function () {
+	var sandbox,
+		pins;
 
 	beforeEach(function () {
 		sandbox = sinon.sandbox.create();
@@ -45,13 +48,13 @@ describe('Pins', function () {
 				pins.select(0);
 			};
 
-		invalidPinSelect.should.throw("Pin is out of range: 0");
+		invalidPinSelect.should.throw('Pin is out of range: 0');
 
 		invalidPinSelect = function () {
 				pins.select(pins.numPins + 1);
 			};
 
-		invalidPinSelect.should.throw("Pin is out of range: 9");
+		invalidPinSelect.should.throw('Pin is out of range: 9');
 	});
 
 	it('can select all', function () {

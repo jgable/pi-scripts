@@ -1,3 +1,4 @@
+'use strict';
 
 var MCP2008 = require('../lib/mcp2008'),
 	should = require('should'),

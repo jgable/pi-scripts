@@ -1,3 +1,4 @@
+'use strict';
 
 var Part = require('../lib/i2cpart'),
 	should = require('should'),
@@ -10,7 +11,7 @@ describe('I2CPart', function () {
 		part = new Part({
 			address: 32
 		});
-	})
+	});
 
 	it('creates an i2c wire', function () {
 		should.exist(part.wire);
