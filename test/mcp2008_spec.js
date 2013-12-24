@@ -11,5 +11,9 @@ describe('MCP2008', function () {
 		});
 
 		_.isFunction(chip.pins).should.equal(true);
+
+		var selected = chip.pins(1,2,3);
+
+		should.exist(selected);
 	});
 });

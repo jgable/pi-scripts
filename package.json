@@ -4,7 +4,8 @@
   "description": "Sample scripts for raspberry pi",
   "main": "index.js",
   "scripts": {
-    "test": "jshint lib/*.js test/*.js && mocha -R Spec"
+    "test": "jshint lib/*.js test/*.js && mocha -R Spec",
+    "coverage": "mocha --require blanket -R html-cov > coverage.html && open coverage.html"
   },
   "repository": {
     "type": "git",
@@ -15,12 +16,19 @@
   "bugs": {
     "url": "https://github.com/jgable/pi-scripts/issues"
   },
+  "config": {
+    "blanket": {
+      "pattern": "/lib/",
+      "data-cover-never": "node_modules"
+    }
+  },
   "dependencies": {
     "lodash": "~2.4.1",
     "bluebird": "~0.11.5-1"
   },
   "devDependencies": {
     "should": "~2.1.1",
-    "sinon": "~1.7.3"
+    "sinon": "~1.7.3",
+    "blanket": "~1.1.6"
   }
 }

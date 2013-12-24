@@ -24,6 +24,16 @@ describe('Pins', function () {
 		sandbox.restore();
 	});
 
+	it('checks for mcp in config', function () {
+		var createInvalidPins = function () {
+				pins = new Pins({
+					mcp: undefined
+				});
+			};
+
+		createInvalidPins.should.throw('Must pass mcp value in the config');
+	});
+
 	it('creates allPins helper value', function () {
 		pins.allPins.length.should.equal(8);
 	});
@@ -45,6 +55,12 @@ describe('Pins', function () {
 
 	it('validates pin numbers', function () {
 		var invalidPinSelect = function () {
+				pins.select('1', '2');
+			};
+
+		invalidPinSelect.should.throw('Pins must be integers: 1');
+
+		invalidPinSelect = function () {
 				pins.select(0);
 			};
 
@@ -55,6 +71,12 @@ describe('Pins', function () {
 			};
 
 		invalidPinSelect.should.throw('Pin is out of range: 9');
+	});
+
+	it('can set values', function () {
+		pins.values.should.not.equal(1);
+		pins.setCurrentValues(1);
+		pins.values.should.equal(1);
 	});
 
 	it('can select all', function () {
